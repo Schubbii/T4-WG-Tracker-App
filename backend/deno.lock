@@ -2,13 +2,23 @@
   "version": "5",
   "specifiers": {
     "jsr:@hono/hono@^4.13.16": "4.13.18",
+    "jsr:@hono/hono@^4.8.3": "4.13.18",
+    "jsr:@hono/zod-validator@~0.9.1": "0.9.1",
     "jsr:@std/assert@1": "1.0.19",
     "jsr:@std/internal@^1.0.12": "1.0.14",
+    "npm:zod@^4.2.1": "4.6.7",
     "npm:zod@^4.6.7": "4.6.7"
   },
   "jsr": {
     "@hono/hono@4.13.18": {
       "integrity": "2e9a294f8ed5ca8f0dddf08927ad46111e756f3329f1483db550cd60757f7e21"
+    },
+    "@hono/zod-validator@0.9.1": {
+      "integrity": "d395d5437509890184c593ce117e48cbe887e1f556b15d4cc27c39367599c69f",
+      "dependencies": [
+        "jsr:@hono/hono@^4.8.3",
+        "npm:zod@^4.2.1"
+      ]
     },
     "@std/assert@1.0.19": {
       "integrity": "eaada96ee120cb980bc47e040f82814d786fe8162ecc53c91d8df60b8755991e",
