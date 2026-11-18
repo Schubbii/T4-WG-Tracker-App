@@ -1,0 +1,111 @@
+8d130c5  2026-11-17  Dokumentation
+ README.md                           |  73 ++++++++++++++-
+ docs/adr/1-persistenz-sqlite.md     |  31 +++++++
+ docs/adr/2-geldbetraege-in-cent.md  |  27 ++++++
+ docs/adr/3-salden-berechnen.md      |  33 +++++++
+ docs/adr/4-kein-login.md            |  28 ++++++
+ docs/adr/5-mitglied-loeschen.md     |  28 ++++++
+ docs/adr/6-vue-router-ohne-pinia.md |  35 ++++++++
+ docs/adr/7-zot-ueber-npm.md         |  26 ++++++
+ docs/adr/8-einfacher-aufbau.md      |  40 +++++++++
+ docs/adr/9-login-pro-wg.md          |  43 +++++++++
+ docs/api.md                         | 146 ++++++++++++++++++++++++++++++
+ docs/architektur.md                 | 171 ++++++++++++++++++++++++++++++++++++
+ docs/ki-nutzung.md                  |  24 +++++
+ docs/reflexion.md                   |  25 ++++++
+ 14 files changed, 729 insertions(+), 1 deletion(-)
+
+917736b  2026-11-17  Frontend Seiten und Router
+ frontend/README.md                     |   5 -
+ frontend/public/icons.svg              |  24 --
+ frontend/src/App.vue                   |  35 ++-
+ frontend/src/assets/hero.png           | Bin 13057 -> 0 bytes
+ frontend/src/assets/vite.svg           |   1 -
+ frontend/src/assets/vue.svg            |   1 -
+ frontend/src/components/HelloWorld.vue |  95 -------
+ frontend/src/main.ts                   |   5 +-
+ frontend/src/router.ts                 |  35 +++
+ frontend/src/style.css                 | 481 +++++++++++++++++----------------
+ frontend/src/views/ExpensesView.vue    |  98 +++++++
+ frontend/src/views/LoginView.vue       |  66 +++++
+ frontend/src/views/MembersView.vue     |  75 +++++
+ frontend/src/views/OverviewView.vue    |  90 ++++++
+ 14 files changed, 650 insertions(+), 361 deletions(-)
+
+be262b2  2026-11-16  Frontend Komponenten
+ frontend/src/components/BalanceList.vue           |  27 ++++++
+ frontend/src/components/ExpenseForm.vue           | 107 ++++++++++++++++++++++
+ frontend/src/components/ExpenseList.vue           |  42 +++++++++
+ frontend/src/components/MemberList.vue            |  25 +++++
+ frontend/src/components/SettlementList.vue        |  29 ++++++
+ frontend/src/components/SettlementSuggestions.vue |  30 ++++++
+ 6 files changed, 260 insertions(+)
+
+5e3505d  2026-11-16  Frontend
+ backend/deno.lock                 |  10 ++
+ backend/main.ts                   |  15 ++
+ backend/src/app.ts                |  34 +++++
+ backend/src/routes/auth.ts        |  55 ++++++++
+ backend/src/routes/balances.ts    |  18 +++
+ backend/src/routes/expenses.ts    |  87 ++++++++++++
+ backend/src/routes/members.ts     |  78 +++++++++++
+ backend/src/routes/settlements.ts |  52 +++++++
+ backend/src/session.ts            |  70 ++++++++++
+ backend/tests/api_test.ts         | 284 ++++++++++++++++++++++++++++++++++++++
+ frontend/src/api.ts               | 105 ++++++++++++++
+ frontend/src/auth.ts              |   4 +
+ frontend/src/format.ts            |  38 +++++
+ frontend/src/types.ts             |  44 ++++++
+ 14 files changed, 894 insertions(+)
+
+54b2adf  2026-11-16  Validierung und Password Hashing
+ backend/deno.lock       |  4 +++
+ backend/src/password.ts | 27 ++++++++++++++++++
+ backend/src/schemas.ts  | 74 +++++++++++++++++++++++++++++++++++++++++++++++++
+ backend/src/session.ts  |  0
+ 4 files changed, 105 insertions(+)
+
+8c1d974  2026-11-15  Datenbank
+ backend/src/database.ts | 288 ++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 288 insertions(+)
+
+a5e4ae3  2026-11-15  Rechenlogik
+ backend/deno.lock             |  32 ++++++++++++++
+ backend/src/balance.ts        | 100 ++++++++++++++++++++++++++++++++++++++++++
+ backend/src/types.ts          |  42 ++++++++++++++++++
+ backend/tests/balance_test.ts |  70 +++++++++++++++++++++++++++++
+ 4 files changed, 244 insertions(+)
+
+3357683  2026-11-15  Projekt aufsetzen
+ frontend/index.html         | 6 +++---
+ frontend/public/favicon.svg | 2 +-
+ frontend/vite.config.ts     | 9 ++++++++-
+ 3 files changed, 12 insertions(+), 5 deletions(-)
+
+e6cd4ed  2026-11-14  setup
+ .gitignore                             |   11 +
+ backend/deno.json                      |   16 +
+ frontend/.gitignore                    |   24 +
+ frontend/.vscode/extensions.json       |    3 +
+ frontend/README.md                     |    5 +
+ frontend/index.html                    |   13 +
+ frontend/package-lock.json             | 1875 ++++++++++++++++++++++++++++++++
+ frontend/package.json                  |   23 +
+ frontend/public/favicon.svg            |    1 +
+ frontend/public/icons.svg              |   24 +
+ frontend/src/App.vue                   |    7 +
+ frontend/src/assets/hero.png           |  Bin 0 -> 13057 bytes
+ frontend/src/assets/vite.svg           |    1 +
+ frontend/src/assets/vue.svg            |    1 +
+ frontend/src/components/HelloWorld.vue |   95 ++
+ frontend/src/main.ts                   |    5 +
+ frontend/src/style.css                 |  296 +++++
+ frontend/tsconfig.app.json             |   15 +
+ frontend/tsconfig.json                 |    7 +
+ frontend/tsconfig.node.json            |   23 +
+ frontend/vite.config.ts                |    7 +
+ 21 files changed, 2452 insertions(+)
+
+66a9f44  2026-11-14  Initial commit
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
